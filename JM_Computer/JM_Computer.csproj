@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E3C475D-D8BB-40AB-B8CE-8E556CB71ADB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JM_Computer</RootNamespace>
+    <AssemblyName>JM_Computer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin">
+      <HintPath>..\..\C# 源码学习\QQ2013通讯DEMO-12.8更新\12.8更新\CC2013\bin\Release\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Error\ErrorShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error\ErrorShow.Designer.cs">
+      <DependentUpon>ErrorShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Startup.Designer.cs">
+      <DependentUpon>Startup.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Error\ErrorShow.resx">
+      <DependentUpon>ErrorShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Startup.resx">
+      <DependentUpon>Startup.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JM_Core\JM_Core.csproj">
+      <Project>{ba0f4614-bcda-423b-acb6-3830e74a6564}</Project>
+      <Name>JM_Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JM_Model\JM_Model.csproj">
+      <Project>{3cae89c0-24c2-4a50-ae34-dbad557c25db}</Project>
+      <Name>JM_Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JM_Util\JM_Util.csproj">
+      <Project>{a3381db4-9eca-444a-a670-8b467a19f1fe}</Project>
+      <Name>JM_Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\addons32.png" />
+    <Content Include="Resources\bold16.png" />
+    <Content Include="Resources\borderbottom16.png" />
+    <Content Include="Resources\casing16.png" />
+    <Content Include="Resources\close32.png" />
+    <Content Include="Resources\copy16.png" />
+    <Content Include="Resources\copyformat16.png" />
+    <Content Include="Resources\cut16.png" />
+    <Content Include="Resources\eraseformat16.png" />
+    <Content Include="Resources\exit16.png" />
+    <Content Include="Resources\fill16.png" />
+    <Content Include="Resources\find32.png" />
+    <Content Include="Resources\fontcolor16.png" />
+    <Content Include="Resources\fontsizedecrease16.png" />
+    <Content Include="Resources\fontsizeincrease16.png" />
+    <Content Include="Resources\goto16.png" />
+    <Content Include="Resources\hilight16.png" />
+    <Content Include="Resources\indentdecrease16.png" />
+    <Content Include="Resources\indentdecrease161.png" />
+    <Content Include="Resources\indentincrease16.png" />
+    <Content Include="Resources\invisiblechars16.png" />
+    <Content Include="Resources\italic16.png" />
+    <Content Include="Resources\multilevellist16.png" />
+    <Content Include="Resources\newdocument32.png" />
+    <Content Include="Resources\open16.png" />
+    <Content Include="Resources\open32.png" />
+    <Content Include="Resources\options16.png" />
+    <Content Include="Resources\orderedlist16.png" />
+    <Content Include="Resources\pageblank16.png" />
+    <Content Include="Resources\paragraphspacing16.png" />
+    <Content Include="Resources\paste16.png" />
+    <Content Include="Resources\paste321.png" />
+    <Content Include="Resources\pastelink16.png" />
+    <Content Include="Resources\pastespecial16.png" />
+    <Content Include="Resources\prepare32.png" />
+    <Content Include="Resources\print32.png" />
+    <Content Include="Resources\print321.png" />
+    <Content Include="Resources\printpreview32.png" />
+    <Content Include="Resources\printquick16.png" />
+    <Content Include="Resources\printquick32.png" />
+    <Content Include="Resources\publish32.png" />
+    <Content Include="Resources\replace16.png" />
+    <Content Include="Resources\save16.png" />
+    <Content Include="Resources\save32.png" />
+    <Content Include="Resources\saveas32.png" />
+    <Content Include="Resources\saveas321.png" />
+    <Content Include="Resources\select16.png" />
+    <Content Include="Resources\send32.png" />
+    <Content Include="Resources\sort16.png" />
+    <Content Include="Resources\strikethru16.png" />
+    <Content Include="Resources\style16.png" />
+    <Content Include="Resources\stylechange32.png" />
+    <Content Include="Resources\styleset16.png" />
+    <Content Include="Resources\subindex16.png" />
+    <Content Include="Resources\superindex16.png" />
+    <Content Include="Resources\textaligncenter16.png" />
+    <Content Include="Resources\textalignjustify16.png" />
+    <Content Include="Resources\textalignleft16.png" />
+    <Content Include="Resources\textalignright16.png" />
+    <Content Include="Resources\themefont.png" />
+    <Content Include="Resources\underline16.png" />
+    <Content Include="Resources\undo16.png" />
+    <Content Include="Resources\unorderedlist16.png" />
+    <Content Include="Resources\word2003doc32.png" />
+    <Content Include="Resources\worddocument32.png" />
+    <Content Include="Resources\wordtemplate32.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
