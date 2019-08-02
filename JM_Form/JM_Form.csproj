@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\cskin.16.1.14.3\lib\net40\CSkin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -79,8 +83,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JM_Forms\JM_Computer.csproj">
-      <Project>{0e3c475d-d8bb-40ab-b8ce-8e556cb71adb}</Project>
+    <ProjectReference Include="..\JM_Computer\JM_Computer.csproj">
+      <Project>{923d9bfb-9ce6-4cfc-8494-c41778f602a7}</Project>
       <Name>JM_Computer</Name>
     </ProjectReference>
     <ProjectReference Include="..\JM_Util\JM_Util.csproj">

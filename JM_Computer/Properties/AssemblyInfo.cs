@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("JM_Forms")]
+[assembly: AssemblyProduct("JM_Computer")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("905838bb-cdb8-4ff5-83f4-9ce78189fa13")]
+[assembly: Guid("53c1af7d-df52-45d6-b7dd-5dcd2ae3d7f0")]
 
 // 程序集的版本信息由下面四个值组成: 
 //
