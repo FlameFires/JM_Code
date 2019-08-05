@@ -54,6 +54,11 @@
       <DependentUpon>ErrorShow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,9 +70,27 @@
     <EmbeddedResource Include="Error\ErrorShow.resx">
       <DependentUpon>ErrorShow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Startup.resx">
       <DependentUpon>Startup.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JM_Core\JM_Core.csproj">
+      <Project>{ba0f4614-bcda-423b-acb6-3830e74a6564}</Project>
+      <Name>JM_Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JM_Model\JM_Model.csproj">
+      <Project>{3cae89c0-24c2-4a50-ae34-dbad557c25db}</Project>
+      <Name>JM_Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JM_Util\JM_Util.csproj">
+      <Project>{a3381db4-9eca-444a-a670-8b467a19f1fe}</Project>
+      <Name>JM_Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

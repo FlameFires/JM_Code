@@ -87,6 +87,10 @@
       <Project>{923d9bfb-9ce6-4cfc-8494-c41778f602a7}</Project>
       <Name>JM_Computer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JM_Model\JM_Model.csproj">
+      <Project>{3cae89c0-24c2-4a50-ae34-dbad557c25db}</Project>
+      <Name>JM_Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JM_Util\JM_Util.csproj">
       <Project>{a3381db4-9eca-444a-a670-8b467a19f1fe}</Project>
       <Name>JM_Util</Name>

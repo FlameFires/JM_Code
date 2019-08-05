@@ -47,6 +47,7 @@
     <Compile Include="HttpUtil\CookieHelper.cs" />
     <Compile Include="HttpUtil\HttpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowForm.cs" />
     <Compile Include="TypeHelper\ObjectHelper.cs" />
     <Compile Include="TypeHelper\ClassHelper.cs" />
   </ItemGroup>

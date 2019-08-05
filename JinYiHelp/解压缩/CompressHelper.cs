@@ -207,48 +207,48 @@ namespace JinYiHelp.CompressHelp
         /// </summary>
         /// <param name="files"></param>
         /// <returns></returns>
-        private static Dictionary<string, string> GetFileEntryMaps(List<string> files)
-        {
-            List<string> fileList = new List<string>();
+        //private static Dictionary<string, string> GetFileEntryMaps(List<string> files)
+        //{
+        //    List<string> fileList = new List<string>();
 
-            void GetFilesRecurs(string path)
-            {
-                //遍历目标文件夹的所有文件
-                foreach (string fileName in Directory.GetFiles(path))
-                {
-                    fileList.Add(fileName);
-                }
+        //    void GetFilesRecurs(string path)
+        //    {
+        //        //遍历目标文件夹的所有文件
+        //        foreach (string fileName in Directory.GetFiles(path))
+        //        {
+        //            fileList.Add(fileName);
+        //        }
 
-                //遍历目标文件夹的所有文件夹
-                foreach (string directory in Directory.GetDirectories(path))
-                {
-                    GetFilesRecurs(directory);
-                }
-            }
+        //        //遍历目标文件夹的所有文件夹
+        //        foreach (string directory in Directory.GetDirectories(path))
+        //        {
+        //            GetFilesRecurs(directory);
+        //        }
+        //    }
 
-            files.ForEach(s =>
-            {
-                if (!s.StartsWith("http"))
-                {
-                    GetFilesRecurs(s);
-                }
-                else
-                {
-                    fileList.Add(s);
-                }
+        //    files.ForEach(s =>
+        //    {
+        //        if (!s.StartsWith("http"))
+        //        {
+        //            GetFilesRecurs(s);
+        //        }
+        //        else
+        //        {
+        //            fileList.Add(s);
+        //        }
 
-            });
+        //    });
 
           
-            if (!fileList.Any())
-            {
-                return new Dictionary<string, string>();
-            }
+        //    if (!fileList.Any())
+        //    {
+        //        return new Dictionary<string, string>();
+        //    }
 
-            string dirname = new string(fileList.First().Substring(0, fileList.Min(s => s.Length)).TakeWhile((c, i) => fileList.All(s => s[i] == c)).ToArray());
-            Dictionary<string, string> dic = fileList.ToDictionary(s => s, s => s.Substring(dirname.Length));
-            return dic;
-        }
+        //    string dirname = new string(fileList.First().Substring(0, fileList.Min(s => s.Length)).TakeWhile((c, i) => fileList.All(s => s[i] == c)).ToArray());
+        //    Dictionary<string, string> dic = fileList.ToDictionary(s => s, s => s.Substring(dirname.Length));
+        //    return dic;
+        //}
 
     }
 }
