@@ -42,7 +42,16 @@
   <ItemGroup>
     <Compile Include="CfgMod.cs" />
     <Compile Include="JmMod.cs" />
+    <Compile Include="Platforms\Jm_Plat\HuoYun.cs" />
+    <Compile Include="Platforms\Jm_Plat\Jm_Provider.cs" />
+    <Compile Include="Platforms\Platform.cs" />
+    <Compile Include="Results\Jm_Result.cs" />
+    <Compile Include="Platform.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IDl_Plat.cs" />
+    <Compile Include="Services\IDm_Plat.cs" />
+    <Compile Include="Services\Jm_Plat.cs" />
+    <Compile Include="SuccMod.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
