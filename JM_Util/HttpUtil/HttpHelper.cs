@@ -15,12 +15,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using log4net;
 
 namespace JM_Util.HttpUtil
 {
        public class HttpHelper
         {
             #region 预定义方变量
+            private ILog log = LogManager.GetLogger(typeof(HttpHelper));
             //默认的编码
             private Encoding encoding = Encoding.Default;
             //Post数据编码
@@ -46,11 +48,13 @@ namespace JM_Util.HttpUtil
                 HttpResult result = new HttpResult();
                 try
                 {
+                    log.Info("准备参数");
                     //准备参数
                     SetRequest(item);
                 }
                 catch (Exception ex)
                 {
+                    log.Info("配置参数时出错: " + ex.Message);
                     //配置参数时出错
                     return new HttpResult() { Cookie = string.Empty, Header = null, Html = ex.Message, StatusDescription = "配置参数时出错：" + ex.Message };
                 }
@@ -131,6 +135,7 @@ namespace JM_Util.HttpUtil
                     SetEncoding(item, result, ResponseByte);
                     //得到返回的HTML
                     result.Html = encoding.GetString(ResponseByte);
+                    log.Info("返回文本为："+result.Html);
                 }
                 else
                 {
@@ -234,18 +239,24 @@ namespace JM_Util.HttpUtil
                     _IPEndPoint = item.IPEndPoint;
                     //设置本地的出口ip和端口
                     request.ServicePoint.BindIPEndPointDelegate = new BindIPEndPoint(BindIPEndPointCallback);
+                    log.Info("设置本地的出口ip和端口：" + item.IPEndPoint);
                 }
                 //设置Header参数
-                if (item.Header != null && item.Header.Count > 0) foreach (string key in item.Header.AllKeys)
+                if (item.Header != null && item.Header.Count > 0)
+                {
+                    foreach (string key in item.Header.AllKeys)
                     {
                         request.Headers.Add(key, item.Header[key]);
                     }
+                    log.Info("header参数："+item.Header);
+                }
                 // 设置代理
                 SetProxy(item);
                 if (item.ProtocolVersion != null) request.ProtocolVersion = item.ProtocolVersion;
                 request.ServicePoint.Expect100Continue = item.Expect100Continue;
                 //请求方式Get或者Post
                 request.Method = item.Method;
+                log.Info("请求方法：" + item.Method);
                 request.Timeout = item.Timeout;
                 request.KeepAlive = item.KeepAlive;
                 request.ReadWriteTimeout = item.ReadWriteTimeout;
@@ -360,6 +371,7 @@ namespace JM_Util.HttpUtil
                     else if (!string.IsNullOrWhiteSpace(item.Postdata))
                     {
                         buffer = postencoding.GetBytes(item.Postdata);
+                        log.Info("请求内容："+item.Postdata);
                     }
                     if (buffer != null)
                     {

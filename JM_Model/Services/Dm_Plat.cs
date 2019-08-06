@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JM_Model.Services
 {
-    class IDm_Plat
+    public class Dm_Plat
     {
     }
 }

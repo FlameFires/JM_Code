@@ -10,6 +10,6 @@ namespace JM_Model
     {
         public static int ThreadNum { get; set; }
         public static int DelayTime { get; set; }
-
+        public static string ProjectId { get; set; }
     }
 }

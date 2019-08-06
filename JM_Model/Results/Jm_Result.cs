@@ -10,11 +10,14 @@ namespace JM_Model.Results
     {
         public bool IsSucc { get; set; }
         public JM_Status Status { get; set; }
+        public string phone { get; set; }
         public string Result { get; set; }
+        public string ErrMsg { get; set; }
     }
 
     public enum JM_Status{
-        success =200,
+        success = 200,
         fail = -1,
+        accpwdNull = 100,
     }
 }
